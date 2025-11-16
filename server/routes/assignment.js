@@ -65,16 +65,65 @@ router.post('/add',async(req,res,next)=>{
 
 //Get route for displaying the Edit page - Update Operation
 router.get('/edit/:id',async(req,res,next)=>{
+    try
+    {
+        const id = req.params.id;
+        const assignToEdit = await Assignment.findById(id);
+        res.render("assignments/edit",
+            {
+                title: "Edit Assignment",
+                Assignment: assignToEdit
+            }
+        )
+    }
+    catch(err)
+    {
+        console.log(err);
+        next(err);
+    }
 
 })
 
 //Post route for di splaying the Edit page - Update Operation
 router.post('/edit/:id',async(req,res,next)=>{
-
+    try
+    {
+        let id = req.params.id;
+        let updateAssign = Assignment({
+            "_id": id,
+            "Name": req.body.Name,
+            "assigned": req.body.assigned,
+            "Due": req.body.Due,
+            "course": req.body.course
+        })
+        Assignment.findByIdAndUpdate(id,updateAssign).then(()=>{
+            res.redirect("/assignments")
+        })
+    }
+    catch(err)
+    {
+        console.log(err);
+        next(err);
+    }
 })
+
+
 
 //Get route for peforming delete operation - Delete Operation
 router.get('/delete/:id',async(req,res,next)=>{
+    try
+    {
+        let id = req.params.id;
+        Assignment.deleteOne({_id:id}).then(()=>{
+            res.redirect("/assignments")
+        })
+
+    }
+    catch(err)
+    {
+        console.log(err);
+        next(err);
+    }
 
 })
 
