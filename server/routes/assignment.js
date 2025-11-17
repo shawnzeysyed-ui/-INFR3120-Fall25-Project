@@ -84,7 +84,7 @@ router.get('/edit/:id',async(req,res,next)=>{
 
 })
 
-//Post route for di splaying the Edit page - Update Operation
+//Post route for displaying the Edit page - Update Operation
 router.post('/edit/:id',async(req,res,next)=>{
     try
     {

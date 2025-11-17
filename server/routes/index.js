@@ -15,13 +15,6 @@ router.get('/home', function(req, res, next) {
   });
 });
 
-/* GET dashboard page */
-router.get('/dashboard', function(req, res, next) {
-  res.render('index', {
-    title: 'Dashboard'
-  });
-});
-
 /* Redirect singular /assignment to /assignments */
 router.get('/assignment', function(req, res, next) {
   res.redirect('/assignments');

@@ -5,7 +5,7 @@
     <div class="row">
         <div class="offset-md-1 col-md-10">
             <h1><%= title %></h1>
-            <a href="/assignments/add" class="btn btn-primary" role="button">
+            <a href="/assignments/add" class="btn btn-dark mb-3" role="button">
                 <i class="fas fa fa-plus-circle"></i> Add Assignment
             </a>
 
@@ -16,6 +16,10 @@
                     <th class="text-center col-2">Date Assigned</th>
                     <th class="text-center col-2">Due Date</th>
                     <th class="text-center col-3">Course</th>
+                    <th class="text-center col-1">Edit</th>
+                    <th class="text-center col-1">Delete</th>
+
+
                 </tr>
                 <!--for/while loop-->
                 <% for(let count=0; count<AssignmentList.length;count++) { %>
@@ -26,12 +30,12 @@
                          <td class="text-center col-3"><%= AssignmentList[count].course %></td>
                          <td class="text-center col-1">
                          <a href = "/assignments/edit/<%= AssignmentList[count]._id%>" 
-                            class="btn btn-primary btn-sm"> 
+                            class="btn btn-outline-primary btn-sm"> 
                             <i class="fas fa-pencil-alt"></i> Edit
                         </a></td>
                         <td class="text-center col-1">
                          <a href = "/assignments/delete/<%= AssignmentList[count]._id%>" 
-                            class="btn btn-danger btn-sm"> 
+                            class="btn btn-outline-danger btn-sm"> 
                             <i class="fas fa-trash-alt"></i> Delete
                         </a></td>
 
