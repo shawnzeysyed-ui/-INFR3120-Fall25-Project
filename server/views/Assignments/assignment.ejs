@@ -1,0 +1,74 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+<!--Main content for displaying our database-->
+<main class="container">
+    <div class="row">
+        <div class="offset-md-1 col-md-10 mt-4 text-center">
+            <h1><%= title %></h1>
+
+            <!-- Show "Add a Book" button only if user is logged in -->
+            <% if(typeof displayName=='string' && displayName) { %>
+                <a href="/assignments/add" class="btn btn-primary" role="button">
+                <i class="fas fa-plus-circle"></i> Add an Assignent
+            </a>
+            <% } %>
+            <table class="table table-bordered table-striped table-hover mt-4">
+
+                <!-- if user is logged in, show edit and delete colums  -->
+                <% if(typeof displayName=='string' && displayName) { %>
+                <!--Header row-->
+                <tr class="d-flex">
+                    <th class="text-center col-4">Assignment</th>
+                    <th class="text-center col-2">Date Assigned</th>
+                    <th class="text-center col-2">Due Date</th>
+                    <th class="text-center col-3">Course</th>
+                    <th class="text-center col-1">Edit</th>
+                    <th class="text-center col-1">Delete</th>
+
+
+                </tr>
+                <!--for/while loop-->
+                <% for(let count=0; count<AssignmentList.length;count++) { %>
+                    <tr class="d-flex">
+                         <td class="text-center col-4"><%= AssignmentList[count].Name %></td>
+                         <td class="text-center col-2"><%= AssignmentList[count].assigned %></td>
+                         <td class="text-center col-2"><%= AssignmentList[count].Due %></td>
+                         <td class="text-center col-3"><%= AssignmentList[count].course %></td>
+                         <td class="text-center col-1">
+                         <a href = "/assignments/edit/<%= AssignmentList[count]._id%>" 
+                            class="btn btn-outline-primary btn-sm"> 
+                            <i class="fas fa-pencil-alt"></i> Edit
+                        </a></td>
+                        <td class="text-center col-1">
+                         <a href = "/assignments/delete/<%= AssignmentList[count]._id%>" 
+                            class="btn btn-outline-danger btn-sm"> 
+                            <i class="fas fa-trash-alt"></i> Delete
+                        </a></td>
+
+                    </tr>
+                <% } %>
+                 <!-- Don't show edit and delete columns, if user is not logged in -->
+                <% } else { %>
+                <tr class="d-flex">
+                    <th class="text-center col-4">Assignment</th>
+                    <th class="text-center col-2">Date Assigned</th>
+                    <th class="text-center col-2">Due Date</th>
+                    <th class="text-center col-3">Course</th>
+    
+
+                </tr>
+                <!--for/while loop-->
+                <% for(let count=0; count<AssignmentList.length;count++) { %>
+                    <tr class="d-flex">
+                         <td class="text-center col-4"><%= AssignmentList[count].Name %></td>
+                         <td class="text-center col-2"><%= AssignmentList[count].assigned %></td>
+                         <td class="text-center col-2"><%= AssignmentList[count].Due %></td>
+                         <td class="text-center col-3"><%= AssignmentList[count].course %></td>
+                    </tr>
+                <% } %>
+                <% } %>
+            </table>
+        </div>
+    </div>
+</main>
+<%- include ../partials/footer.ejs %>

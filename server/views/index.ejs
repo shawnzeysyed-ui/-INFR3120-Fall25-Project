@@ -1,0 +1,42 @@
+<%- include partials/main_nav.ejs %>
+<%- include partials/header.ejs %>
+
+<main class="container mt-5">
+
+  <!-- Jumbotron / Welcome -->
+  <div class="jumbotron text-center mb-5">
+    <h1 class="display-4">Welcome to our <%= title %> page</h1>
+    <p class="lead">Stay on top of school, one task at a time.</p>
+  </div>
+
+  <!-- About DueDesk Section -->
+  <div class="mb-5">
+    <h2 class="mb-3">About DueDesk</h2>
+    <div class="card p-4">
+      <p>
+        Our web application, <strong>DueDesk</strong>, is a simple and efficient assignment tracker for students. 
+        Users create an account and log in to securely manage their tasks. They can add assignments with details 
+        like title, course, due date, and status.
+      </p>
+      <p> 
+        Students can quickly edit, delete, or mark tasks as complete, making it easy to stay organized and on top of their workload.
+      </p>
+    </div>
+  </div>
+
+  <!-- Info on Creating an Account with Register Button -->
+  <div class="mb-5 text-center">
+    <h2 class="mb-3">Getting Started</h2>
+    <div class="card p-4 bg-light">
+      <p>
+        To start using <strong>DueDesk</strong>, create an account by registering or login by clicking the icon on the top right corner! Click the GREEN BUTTON!!
+      </p>
+      <a href="/register" class="btn btn-success btn-lg mt-3">Register Now</a>
+    </div>
+  </div>
+
+</main>
+  <!-- all code from lectures, buttons and icons from bootstrap and fontawesome-->
+
+<%- include partials/bottom_nav.ejs %>
+<%- include partials/footer.ejs %>
