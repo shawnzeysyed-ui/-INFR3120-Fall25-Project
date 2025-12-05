@@ -1,0 +1,52 @@
+<main class="container">
+
+    <div class="alert alert-danger" style="display: none;">
+    </div>
+
+    <div class="row">
+        <div class="offset-md-4 col-md-4">
+            <h1 class="text-center mt-4">Please Login</h1>
+
+            <!-- Login form -->
+            <form method="post" autocomplete="off">
+                
+                <!-- Username input -->
+                <fieldset class="form-group">
+                    <label for="username"></label>
+                    <input 
+                        type="text" 
+                        class="form-control"
+                        name="username"
+                        placeholder="Enter username"
+                        id="username" 
+                        required 
+                        autofocus>
+                </fieldset>
+
+                <!-- Password input -->
+                <fieldset class="form-group mt-3">
+                    <label for="password"></label>
+                    <input 
+                        type="password" 
+                        class="form-control"
+                        name="password"
+                        placeholder="Enter password"
+                        id="password" 
+                        required>
+
+                    <div class="mt-2">
+                        or <a href="/register">Register here</a>
+                    </div>
+                </fieldset>
+
+                <!-- Buttons -->
+                <fieldset class="form-group text-right mt-4">
+                    <input type="submit" class="btn btn-success" value="Login">
+                    <a href="/" class="btn btn-warning">Cancel</a>
+                </fieldset>
+
+            </form>
+        </div>
+    </div>
+
+</main>
