@@ -1,5 +1,5 @@
 Duedesk webpage url: https://duedesk.onrender.com
-UPDATE URL FOR PART 2: https://duedesk-2olv.onrender.com/
+UPDATE URL FOR PART 2 and part 3 https://duedesk-2olv.onrender.com/
 
 ### Onedrive folder containing: index.js, package.json###
 ###index.js##
